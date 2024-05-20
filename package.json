@@ -1,0 +1,14 @@
+{
+  "name": "tumishomapanga-app",
+  "version": "0.0.5",
+  "description": "Portfolio Website housing all of my projects",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "start-portfolio"
+  ],
+  "author": "Tumisho Mapanga",
+  "license": "ISC"
+}
