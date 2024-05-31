@@ -36,6 +36,247 @@ body {
     background: var(--portfolio-orange);
 }
 
+.header {
+    position: fixed;
+    z-index: 8000;
+    top: 2vh;
+    padding: 5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: 6vh;
+    transform: translateX(-100%);
+    overflow: hidden;
+
+    a {
+        height: fit-content;
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        padding-left: 2px;
+
+        svg {
+            height: 40px;
+            width: 40px;
+
+            path {
+                fill: var(--portfolio-orange);
+            }
+        }
+
+        /* Click */
+        &:active {
+            svg {
+                path {
+                    fill: var(--portfolio-white);
+                }
+            }
+        }
+
+        /* Hover */
+        &:hover {
+            svg {
+                path {
+                    fill: var(--portfolio-white);
+                }
+            }
+        }
+    }
+}
+
+.preloader-outer {
+    * {
+        cursor: default;
+    }
+
+    position: fixed;
+    height: fit-content;
+    width: fit-content;
+    z-index: 4000;
+    opacity: 0;
+
+    .preloader-wrapper {
+
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        background: var(--portfolio-orange);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .preloader-logo-wrapper {
+            position: absolute;
+            height: fit-content;
+            width: fit-content;
+
+            svg {
+                height: 400px;
+                width: 400px;
+            }
+        }
+
+        /* width="880" height="758" */
+        .preloader-text-wrapper {
+            position: absolute;
+
+            h1 {
+                color: var(--portfolio-white);
+                font-size: 100px;
+                font-weight: 600;
+                font-family: "HK-Grotesk-Bold";
+            }
+        }
+    }
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--portfolio-black);
+    position: relative;
+
+    .main-text-wrapper {
+        width: 55%;
+        height: fit-content;
+        overflow: hidden;
+        position: absolute;
+
+        .head-inner {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+
+            h1 {
+                font-family: "HK-Grotesk-Bold";
+                color: var(--portfolio-orange);
+                font-size: 70px;
+                text-wrap: balance;
+                text-align: center;
+                transform: translateY(32px);
+                opacity: 0;
+            }
+        }
+
+    }
+
+    .main-logo-inner {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        svg {
+            fill: none;
+            stroke: #ffc107;
+            stroke-width: 1px;
+            height: 450px;
+            width: 450px;
+        }
+    }
+
+    .main-contacts-inner {
+        height: fit-content;
+        width: fit-content;
+        overflow: hidden;
+        position: fixed;
+        bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+        gap: 15px;
+
+        .enq-inner {
+            height: 20%;
+            overflow: hidden;
+
+            p {
+                color: var(--portfolio-orange);
+                font-size: 18px;
+                font-family: "HK-Grotesk-Medium";
+                transform: translateY(50px);
+                opacity: 0;
+            }
+        }
+
+        .socials-inner {
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            height: 80%;
+            gap: 5px;
+            align-items: center;
+            justify-content: center;
+            /* border: #ffc107 1px solid; */
+            overflow: hidden;
+
+            a {
+                padding: 10px;
+                text-decoration: none;
+                height: fit-content;
+                width: fit-content;
+                cursor: pointer;
+                transform: translateY(50px);
+                opacity: 0;
+
+                svg {
+                    height: 30px;
+                    width: 30px;
+
+                    path {
+                        fill: var(--portfolio-orange);
+                    }
+                }
+
+                &:hover {
+                    padding: 10px;
+                    text-decoration: none;
+                    height: fit-content;
+                    width: fit-content;
+                    cursor: pointer;
+
+
+                    svg {
+                        height: 30px;
+                        width: 30px;
+
+                        path {
+                            fill: var(--portfolio-white);
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        height: fit-content;
+        width: 100%;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        position: fixed;
+        bottom: 0;
+
+        p {
+            color: var(--portfolio-orange);
+            font-size: 18px;
+            font-family: "HK-Grotesk-Medium";
+            opacity: 0;
+        }
+    }
+}
+
 
 /* Mobile Devices */
 @media screen and (max-width:428px) {
@@ -86,6 +327,7 @@ body {
         position: fixed;
         height: fit-content;
         width: fit-content;
+        opacity: 0;
         z-index: 4000;
 
         .preloader-wrapper {
@@ -277,7 +519,7 @@ body {
 }
 
 /* Mini Tablets */
-@media screen and (min-width:567px) and (max-width:767px) {
+@media screen and (min-width:429px) and (max-width:767px) {
     .header {
         position: fixed;
         z-index: 8000;
@@ -331,6 +573,7 @@ body {
             cursor: default;
         }
 
+        opacity: 0;
         position: fixed;
         height: fit-content;
         width: fit-content;
@@ -570,6 +813,7 @@ body {
         height: fit-content;
         width: fit-content;
         z-index: 4000;
+        opacity: 0;
 
         .preloader-wrapper {
             height: 100vh;
@@ -631,7 +875,7 @@ body {
                 h1 {
                     font-family: "HK-Grotesk-Bold";
                     color: var(--portfolio-orange);
-                    font-size: 30px;
+                    font-size: 40px;
                     text-wrap: balance;
                     text-align: center;
                     position: relative;
@@ -815,8 +1059,10 @@ body {
         height: fit-content;
         width: fit-content;
         z-index: 4000;
+        opacity: 0;
 
         .preloader-wrapper {
+
             height: 100vh;
             width: 100vw;
             position: relative;

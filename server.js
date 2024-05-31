@@ -6,15 +6,14 @@ const helmet = require("helmet");
 const session = require("express-session");
 const compression = require("compression");
 const app = express();
-// const cache = require("express-cache");
-const csrf = require("csurf");
 
+
+app.use(express.static("public"));
 
 app.use(cors());
-// app.use(cache('1 hour'));
-app.use(express.static("public"));
+
 app.use(compression());
-// app.use(csrf());
+
 
 app.use(helmet({
     crossOriginResourcePolicy: {
@@ -22,12 +21,14 @@ app.use(helmet({
     },
     contentSecurityPolicy: {
         directives: {
-            scriptSrc: ["'self'", "'unsafe-inline'"]
+            scriptSrc: ["'self'", "'unsafe-inline'", "https://cdnjs.cloudflare.com"],
+            "style-src": ["'self'", "'unsafe-inline'"]
         }
     }
 }));
 
 app.use(session({
+    name: "tm-port-test.sid",
     secret: process.env.INITIAL_SESSION_KEY,
     resave: false,
     saveUninitialized: true,
@@ -41,10 +42,12 @@ app.use(session({
 
 
 app.get("/notfound", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "errors", "404.html"));
+    res.sendFile(path.join(__dirname, "public", "pages", "404.html"));
 })
-app.get("/notfound", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "errors", "500.html"));
+
+
+app.get("/servererror", (req, res) => {
+    res.sendFile(path.join(__dirname, "public", "pages", "500.html"));
 })
 
 app.get("/", (req, res) => {
@@ -52,10 +55,10 @@ app.get("/", (req, res) => {
 })
 
 app.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname, "public", "pages", "index.html"))
+    res.sendFile(path.join(__dirname, "public", "pages", "index.html"));
 })
 
-app.use("/gsap", express.static("./node_modules/gsap/dist"));
+app.use("/gsap", express.static("/node_modules/gsap/dist"));
 
 app.all("*", (req, res, next) => {
     const err = new Error(`Cannot find ${req.originalUrl} on the server`);

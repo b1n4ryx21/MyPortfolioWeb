@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }).add(() => {
                 mainAnimation.to(".main-logo-inner svg", {
+                    ease: "linear",
                     opacity: 1,
                     scale: 1
                 }).to(".head-inner h1", {
