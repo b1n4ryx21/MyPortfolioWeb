@@ -178,6 +178,8 @@ body {
             stroke-width: 1px;
             height: 450px;
             width: 450px;
+            scale: 100;
+            opacity: 0;
         }
     }
 
@@ -663,6 +665,8 @@ body {
                 stroke-width: 1px;
                 height: 450px;
                 width: 450px;
+                scale: 100;
+                opacity: 0;
             }
         }
 
@@ -900,6 +904,8 @@ body {
                 stroke-width: 1px;
                 height: 450px;
                 width: 450px;
+                scale: 100;
+                opacity: 0;
             }
         }
 
@@ -1144,6 +1150,8 @@ body {
                 stroke-width: 1px;
                 height: 450px;
                 width: 450px;
+                scale: 100;
+                opacity: 0;
             }
         }
 

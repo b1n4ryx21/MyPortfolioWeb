@@ -26,10 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }).to(".preloader-logo-wrapper svg", {
             scale: 100,
             onComplete: () => {
-                mainAnimation.play().to(".main-logo-inner svg", {
-                    opacity: 0,
-                    scale: 100
-                }).to(".main", {
+                mainAnimation.play().to(".main", {
                     opacity: 1
                 })
             }
@@ -69,3 +66,9 @@ document.addEventListener("DOMContentLoaded", () => {
         })
     })
 })
+
+
+/**  .to(".main-logo-inner svg", {
+opacity: 0,
+    scale: 100
+}) **/

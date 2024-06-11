@@ -58,7 +58,7 @@ app.get("/home", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "pages", "index.html"));
 })
 
-app.use("/gsap", express.static("/node_modules/gsap/dist"));
+app.use("/gsap", express.static("./node_modules/gsap/dist"));
 
 app.all("*", (req, res, next) => {
     const err = new Error(`Cannot find ${req.originalUrl} on the server`);

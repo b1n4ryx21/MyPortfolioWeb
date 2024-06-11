@@ -16,11 +16,13 @@
     "dotenv": "^16.3.1",
     "express": "^4.19.2",
     "express-cache": "^0.1.1",
+    "express-csurf": "^1.10.1",
     "express-session": "^1.17.3",
     "express-validator": "^7.1.0",
     "gsap": "^3.12.2",
     "helmet": "^7.1.0",
-    "http2-express-bridge": "^1.0.7"
+    "http2-express-bridge": "^1.0.7",
+    "mongoose": "^8.0.3"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
