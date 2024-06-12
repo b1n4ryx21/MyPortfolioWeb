@@ -67,7 +67,7 @@ router.get("/", (req, res) => {
 })
 
 router.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public", "pages", "index.html"));
+    res.sendFile(path.join(__dirname, "../public", "pages", "index.html"))
 })
 
 // app.use("/gsap", express.static("./node_modules/gsap/dist"));
