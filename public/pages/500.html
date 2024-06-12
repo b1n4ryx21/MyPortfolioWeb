@@ -35,7 +35,7 @@
             <div class="err-text err-text-500">
                 <h3>There seems to be a problem with the server.</h3>
             </div>
-            <button class="home-button">
+            <button class="home-button" aria-label="Button for Go back to homepage">
                 Back to Homepage
             </button>
         </div>
@@ -44,6 +44,10 @@
 
 
     <script src="../scripts/error.js"></script>
+    <noscript
+        style="height: 100vh;width: 100vw;display: flex;align-items: center;justify-content: center;h1{color: #020202;font-family: monospace;font-size: 18px;font-weight: 800;}">
+        <h1>Please enable JavaScript on your browser to use this application</h1>
+    </noscript>
 </body>
 
 </html>

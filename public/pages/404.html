@@ -17,7 +17,7 @@
 
 <body>
     <header class="header">
-        <a href="/home" class="nav-home">
+        <a href="/home" class="nav-home" aria-label="Go to Homepage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 758">
                 <path id="Polygon_2" data-name="Polygon 2"
                     d="M408.492,177.506c6.25-35.21,56.765-35.21,63.015,0L519.36,447.1a32,32,0,0,0,11,18.971L740.487,641.515c27.489,22.952,2.279,66.838-31.4,54.655L450.886,602.758a32,32,0,0,0-21.772,0L170.908,696.17c-33.675,12.183-58.884-31.7-31.4-54.655L349.641,466.07a32,32,0,0,0,11-18.971Z"
@@ -34,7 +34,7 @@
             <div class="err-text">
                 <h3>Sorry, this page does not exist.</h3>
             </div>
-            <button class="home-button">
+            <button class="home-button" aria-label="Button for Go back to homepage">
                 Back to Homepage
             </button>
         </div>
@@ -43,7 +43,10 @@
 
 
     <script src="../scripts/error.js"></script>
-
+    <noscript
+        style="height: 100vh;width: 100vw;display: flex;align-items: center;justify-content: center;h1{color: #020202;font-family: monospace;font-size: 18px;font-weight: 800;}">
+        <h1>Please enable JavaScript on your browser to use this application</h1>
+    </noscript>
 </body>
 
 </html>

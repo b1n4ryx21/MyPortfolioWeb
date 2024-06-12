@@ -40,14 +40,14 @@ app.use(helmet({
 }));
 
 app.use(session({
-    name: "tm-port-test.sid",
+    name: "tm-port.sid",
     secret: process.env.INITIAL_SESSION_KEY,
     resave: false,
     saveUninitialized: true,
     cookie: {
-        secure: false,
+        secure: true,
         name: "tm-port-g-001",
-        maxAge: 31536000000 * 12 // 12 months
+        maxAge: 31536000000 * 2 // 2 months
     }
 }))
 
