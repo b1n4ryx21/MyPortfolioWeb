@@ -2,10 +2,9 @@
   "name": "tumishomapanga-app",
   "version": "0.0.5",
   "description": "Portfolio Website housing all of my projects",
-  "main": "server.js",
+  "main": "api/server.js",
   "scripts": {
-    "test": "test",
-    "start": "nodemon server.js"
+    "start": "node api/server.js"
   },
   "author": "Tumisho Mapanga",
   "license": "ISC",
@@ -22,9 +21,11 @@
     "gsap": "^3.12.2",
     "helmet": "^7.1.0",
     "http2-express-bridge": "^1.0.7",
-    "mongoose": "^8.0.3"
+    "mongoose": "^8.0.3",
+    "serverless-http": "^3.2.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "supertest": "^7.0.0"
   }
 }
