@@ -20,7 +20,7 @@ const port = process.env.PORT || 3000;
 //     console.error(err)
 // })
 
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(cors());
 // app.use(csurf())
@@ -54,20 +54,20 @@ app.use(session({
 
 
 router.get("/notfound", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public", "pages", "404.html"));
+    res.sendFile(path.join(__dirname, "../public/pages/404.html"));
 })
 
 
 router.get("/servererror", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public", "pages", "500.html"));
+    res.sendFile(path.join(__dirname, "../public/pages/500.html"));
 })
 
 router.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public", "pages", "index.html"));
+    res.sendFile(path.join(__dirname, "../public/pages/index.html"));
 })
 
 router.get("/home", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public", "pages", "index.html"))
+    res.sendFile(path.join(__dirname, "../public/pages/index.html"))
 })
 
 // app.use("/gsap", express.static("./node_modules/gsap/dist"));
