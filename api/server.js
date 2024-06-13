@@ -77,7 +77,9 @@ router.get("/home", (req, res) => {
 // API calls
 // const userAuth = require("./routes/userAuth");
 // app.use("/tmws/api/", userAuth)
-
+router.get("*", (req, res)=>{
+    res.sendFile(path.join(__dirname, "../public/pages"), req.path)
+})
 // Error Handling
 app.all("*", (req, res, next) => {
     const err = new Error(`Cannot find ${req.originalUrl} on the server`);
@@ -96,6 +98,7 @@ app.use((error, req, res, next) => {
         res.status(error.statusCode).redirect("/servererror");
     }
 })
+
 
 // Routing attachment
 app.use('/', router);
